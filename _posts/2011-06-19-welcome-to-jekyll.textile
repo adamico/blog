@@ -1,0 +1,14 @@
+---
+title: Welcome to Jekyll
+layout: post
+---
+Another attempt at a blog... I tried 'em all: blogger, wordpress, tumblr...
+I gave up adding posts sooner or later. I don't think it's because I lacked inspiration, just that I wanted something more homebrew, for hackers...
+
+Well, here I am with Jekyll.
+
+I'm a Ruby (and Rails) apprentice developer with no formal IT education. I've been coding seriously for a little more than a year and I simply love Ruby syntax.
+
+In this blog I'll talk about code, photography, life and whatsoever.
+
+See you around!
