@@ -5,6 +5,20 @@
 **Status**: Draft  
 **Input**: User description: "create a hugo blog following https://gohugo.io/getting-started/quick-start. this first spec should only tackle the basic implementation of hugo with a basic theme, a landing page showing the most recent blog posts, an about page, a disclaimer page"
 
+## Clarifications
+
+### Session 2025-11-11
+
+- Q: Theme Selection Criteria - Which pre-built theme should be used? → A: Ananke theme (Hugo's official Quick Start theme, passes WCAG 2.1 AA and AAA accessibility tests per WAVE evaluation at https://wave.webaim.org/)
+- Q: Empty State Message Content - What message to display when no posts exist? → A: "These aren't the posts you're looking for... yet"
+- Q: Post Excerpt Handling - How to handle excerpt truncation and short posts? → A: Smart truncation - show full post if <150 chars, otherwise truncate at nearest word boundary before 200 chars, append "..."
+
+### References
+
+- **Hugo Themes Directory**: https://themes.gohugo.io/ - Official catalog of Hugo themes
+- **WAVE Accessibility Tool**: https://wave.webaim.org/ - Web accessibility evaluation tool for WCAG compliance testing
+- **Ananke Theme**: https://github.com/theNewDynamic/gohugo-theme-ananke - Official repository and documentation
+
 ## User Scenarios & Testing *(mandatory)*
 
 ### User Story 1 - View Recent Blog Posts (Priority: P1)
@@ -18,10 +32,10 @@ A reader visits the blog homepage to discover the latest content. The landing pa
 **Acceptance Scenarios**:
 
 1. **Given** the blog has published posts, **When** a reader navigates to the homepage, **Then** they see a list of the most recent posts (minimum 3 posts if available)
-2. **Given** a post is displayed on the homepage, **When** the reader views it, **Then** they see the post title, publication date, and an excerpt (first 150-200 characters)
+2. **Given** a post is displayed on the homepage, **When** the reader views it, **Then** they see the post title, publication date, and an excerpt (full content if less than 150 characters, otherwise truncated at nearest word boundary before 200 characters with "..." appended)
 3. **Given** the reader is on the homepage, **When** they click a post title, **Then** they are taken to the full post page
 4. **Given** the blog has more than 10 posts, **When** the reader views the homepage, **Then** only the 10 most recent posts are displayed
-5. **Given** the blog has no published posts, **When** a reader navigates to the homepage, **Then** they see a message indicating no posts are available yet
+5. **Given** the blog has no published posts, **When** a reader navigates to the homepage, **Then** they see the message "These aren't the posts you're looking for... yet"
 
 ---
 
@@ -59,8 +73,8 @@ A reader wants to understand legal terms, disclaimers, or usage policies for the
 
 ### Edge Cases
 
-- What happens when the blog has zero published posts? (Display appropriate empty state message)
-- What happens when a post has no excerpt or is very short? (Show full content or first paragraph)
+- What happens when the blog has zero published posts? (Display "These aren't the posts you're looking for... yet")
+- What happens when a post has no excerpt or is very short? (Show full content if less than 150 characters, otherwise truncate smartly at word boundary)
 - What happens when page navigation links are clicked on the same page? (Page reloads or no action, depending on implementation)
 - What happens when a reader accesses the blog on different screen sizes? (Responsive design ensures readability on mobile, tablet, and desktop)
 - What happens when post titles are very long? (Truncate or wrap gracefully without breaking layout)
@@ -71,17 +85,17 @@ A reader wants to understand legal terms, disclaimers, or usage policies for the
 
 - **FR-001**: Blog MUST display a homepage that lists the most recent blog posts in reverse chronological order (newest first)
 - **FR-002**: Blog MUST display a maximum of 10 posts on the homepage
-- **FR-003**: Each post listing on the homepage MUST show the post title, publication date, and an excerpt
+- **FR-003**: Each post listing on the homepage MUST show the post title, publication date, and an excerpt (full content if post is less than 150 characters, otherwise truncated at nearest word boundary before 200 characters with "..." appended)
 - **FR-004**: Blog MUST provide clickable post titles that navigate to the full post page
 - **FR-005**: Blog MUST include an About page accessible from site navigation
 - **FR-006**: Blog MUST include a Disclaimer page accessible from site navigation or footer
 - **FR-007**: Blog MUST have a consistent navigation menu visible on all pages
 - **FR-008**: Navigation MUST include links to: Home, About, and Disclaimer pages
-- **FR-009**: Blog MUST use a basic pre-built theme that provides visual styling
+- **FR-009**: Blog MUST use the Ananke theme (Hugo's official theme, WCAG 2.1 AA/AAA compliant)
 - **FR-010**: Blog MUST be buildable to static HTML files
 - **FR-011**: All pages MUST be responsive and readable on mobile devices (minimum 320px width)
 - **FR-012**: Blog MUST display publication dates in a human-readable format (e.g., "November 11, 2025" or "Nov 11, 2025")
-- **FR-013**: Blog MUST handle the case when no posts exist by displaying an appropriate empty state message
+- **FR-013**: Blog MUST handle the case when no posts exist by displaying the message: "These aren't the posts you're looking for... yet"
 - **FR-014**: Each full post page MUST display the post title, publication date, and complete content
 - **FR-015**: Blog MUST support Markdown content for posts and pages
 
@@ -101,7 +115,7 @@ A reader wants to understand legal terms, disclaimers, or usage policies for the
 - **SC-004**: All pages are readable without horizontal scrolling on mobile devices (320px width minimum)
 - **SC-005**: The blog homepage loads with a total page weight under 500KB (text content, excluding images)
 - **SC-006**: A reader can successfully view a full blog post by clicking its title from the homepage
-- **SC-007**: Post excerpts are between 100-200 characters, providing enough context for readers to decide if they want to read more
+- **SC-007**: Post excerpts follow smart truncation rules: full content shown if less than 150 characters, otherwise truncated at nearest word boundary before 200 characters with "..." appended
 - **SC-008**: The blog can be built to static files and deployed to any static hosting service without errors
 - **SC-009**: Navigation is consistent across all pages—same menu items appear in the same location
 - **SC-010**: A new blog post can be added and appears on the homepage after rebuilding the site
@@ -109,7 +123,9 @@ A reader wants to understand legal terms, disclaimers, or usage policies for the
 ### Assumptions
 
 - Hugo static site generator will be used (as specified in the requirement)
-- A pre-built Hugo theme will be selected (not custom-designed from scratch)
+- The Ananke theme will be used (Hugo's official Quick Start theme, verified WCAG 2.1 AA/AAA compliant via WAVE testing at https://wave.webaim.org/)
+- Theme alternatives can be found at https://themes.gohugo.io/ if Ananke needs replacement
+- Accessibility validation will be performed using WAVE (https://wave.webaim.org/) or equivalent tools
 - Content will be written in Markdown format
 - The blog will be built locally and the static output deployed to hosting
 - Initial content (at least 1-2 sample posts) will be created to demonstrate functionality
