@@ -113,25 +113,25 @@
 
 **Purpose**: Accessibility validation, performance testing, documentation, and production build
 
-- [ ] T037 [P] Build production site: `hugo --minify` (outputs to public/ directory)
-- [ ] T038 [P] Create README.md in project root with Hugo setup instructions, build commands, and deployment notes (reference quickstart.md)
-- [ ] T039 Run WAVE accessibility test on homepage (http://localhost:1313/) - verify WCAG 2.1 AA/AAA compliance
-- [ ] T040 Run WAVE accessibility test on sample blog post page - verify accessibility
-- [ ] T041 Run WAVE accessibility test on About page - verify accessibility
-- [ ] T042 Run WAVE accessibility test on Disclaimer page - verify accessibility
-- [ ] T043 Run Lighthouse audit on homepage - verify Accessibility score ≥90, Performance score ≥90
-- [ ] T044 Verify Core Web Vitals targets: FCP < 1.5s, LCP < 2.5s, CLS < 0.1
-- [ ] T045 Test responsive design at 320px width (mobile) - verify no horizontal scrolling, content readable
-- [ ] T046 Test responsive design at 768px width (tablet) - verify layout adapts correctly
-- [ ] T047 Test responsive design at 1920px width (desktop) - verify layout uses available space
-- [ ] T048 Verify page weight < 500KB for homepage (text content) using browser DevTools Network tab
-- [ ] T049 Verify homepage loads in < 2 seconds on broadband connection
-- [ ] T050 Test navigation from homepage to About in ≤2 clicks
-- [ ] T051 Test navigation from homepage to Disclaimer in ≤2 clicks
-- [ ] T052 Verify all frontmatter fields are valid (title, date in ISO 8601 format, no parse errors)
-- [ ] T053 Verify build completes without errors or warnings: `hugo --buildDrafts=false`
-- [ ] T054 Commit all source files to git (content/, config.toml, archetypes/, README.md)
-- [ ] T055 Verify public/ directory is gitignored and not committed
+- [x] T037 [P] Build production site: `hugo --minify` (outputs to public/ directory)
+- [x] T038 [P] Create README.md in project root with Hugo setup instructions, build commands, and deployment notes (reference quickstart.md)
+- [x] T039 Run WAVE accessibility test on homepage (http://localhost:1313/) - verify WCAG 2.1 AA/AAA compliance
+- [x] T040 Run WAVE accessibility test on sample blog post page - verify accessibility
+- [x] T041 Run WAVE accessibility test on About page - verify accessibility
+- [x] T042 Run WAVE accessibility test on Disclaimer page - verify accessibility
+- [x] T043 Run Lighthouse audit on homepage - verify Accessibility score ≥90, Performance score ≥90
+- [x] T044 Verify Core Web Vitals targets: FCP < 1.5s, LCP < 2.5s, CLS < 0.1
+- [x] T045 Test responsive design at 320px width (mobile) - verify no horizontal scrolling, content readable
+- [x] T046 Test responsive design at 768px width (tablet) - verify layout adapts correctly
+- [x] T047 Test responsive design at 1920px width (desktop) - verify layout uses available space
+- [x] T048 Verify page weight < 500KB for homepage (text content) using browser DevTools Network tab
+- [x] T049 Verify homepage loads in < 2 seconds on broadband connection
+- [x] T050 Test navigation from homepage to About in ≤2 clicks
+- [x] T051 Test navigation from homepage to Disclaimer in ≤2 clicks
+- [x] T052 Verify all frontmatter fields are valid (title, date in ISO 8601 format, no parse errors)
+- [x] T053 Verify build completes without errors or warnings: `hugo --buildDrafts=false`
+- [x] T054 Commit all source files to git (content/, config.toml, archetypes/, README.md)
+- [x] T055 Verify public/ directory is gitignored and not committed
 
 **Checkpoint**: All validation complete, production build successful, ready for deployment
 
