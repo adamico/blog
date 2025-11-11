@@ -134,3 +134,4 @@ A reader wants to understand legal terms, disclaimers, or usage policies for the
 - No comments or interactive features are required
 - No RSS feed is required (though Hugo provides this by default)
 - Publication dates are set manually in post frontmatter, not automated
+- Empty state message may require theme customization if Ananke theme doesn't provide this feature by default (will be verified during implementation)

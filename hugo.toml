@@ -1,0 +1,44 @@
+baseURL = 'http://localhost:1313/'
+languageCode = 'en-us'
+title = 'My Hugo Blog'
+theme = 'github.com/theNewDynamic/gohugo-theme-ananke/v2'
+
+# Pagination settings
+[pagination]
+  pagerSize = 10
+
+# Navigation menu
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+  [[menu.main]]
+    name = "Disclaimer"
+    url = "/disclaimer/"
+    weight = 3
+
+# Ananke theme parameters
+[params]
+  description = "A static blog built with Hugo"
+  show_reading_time = true
+  read_more_copy = "Read more"
+
+# Markup settings
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = false
+
+# Minification settings
+[minify]
+  disableCSS = false
+  disableHTML = false
+  disableJS = false
+  disableJSON = false
+  disableSVG = false
+  disableXML = false
