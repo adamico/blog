@@ -24,9 +24,13 @@ theme = 'github.com/theNewDynamic/gohugo-theme-ananke/v2'
 
 # Ananke theme parameters
 [params]
+  mainSections = ["posts"]
   description = "A static blog built with Hugo"
   show_reading_time = true
   read_more_copy = "Read more"
+
+[params.ananke]
+  show_recent_posts = true
 
 # Markup settings
 [markup]
