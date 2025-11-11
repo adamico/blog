@@ -2,8 +2,10 @@
 title: "My First Blog Post"
 date: 2025-11-11T10:00:00-05:00
 draft: false
-description: "Welcome to my new Hugo blog with the Ananke theme"
+description: "AI: Welcome to my new Hugo blog with the Ananke theme"
 ---
+
+Hey!
 
 This is my first blog post! Welcome to my new static blog built with Hugo and the Ananke theme.
 

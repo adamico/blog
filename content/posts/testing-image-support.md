@@ -2,7 +2,7 @@
 title: "Testing Image Support"
 date: 2025-11-11T16:00:00Z
 draft: false
-description: "Demonstrating embedded images in Hugo blog"
+description: "AI: Demonstrating embedded images in Hugo blog"
 ---
 
 ## Images Work in Hugo!
